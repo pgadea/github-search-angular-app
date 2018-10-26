@@ -1,0 +1,11 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <form action="" fxFlex="75%" fxFlexFill>
+    <mat-form-field>
+      <input matInput type="text" placeholder="GitHub Username" [formControl]="usernameFormControl">
+    </mat-form-field>
+    <mat-error *ngIf="usernameFormControl.dirty && usernameFormControl.hasError('required')">
+      Username is <strong>Required</strong>
+    </mat-error>
+  </form>
+  <button mat-raised-button color="accent" [routerLink]="[usernameFormControl.value]">Search</button>
+</div>
